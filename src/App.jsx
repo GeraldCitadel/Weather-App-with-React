@@ -8,9 +8,6 @@ const App = () => {
    const [isLoading, setIsLoading] = useState(false)
    const [city, setCity] = useState('')
 
-   const tmpKey = import.meta.env.VITE_WEATHER_API_KEY || "NoKy";
-
-
    async function getWeather(e) {
       e.preventDefault()
 
@@ -40,7 +37,7 @@ const App = () => {
    return (
       <div className='container'>
          <h1>Weather App</h1>
-         <form data-ky={tmpKey} action="" onSubmit={getWeather}>
+         <form action="" onSubmit={getWeather}>
             <input
                type="text"
                id='city'
