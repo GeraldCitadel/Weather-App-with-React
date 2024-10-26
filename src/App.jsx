@@ -8,12 +8,13 @@ const App = () => {
    const [isLoading, setIsLoading] = useState(false)
    const [city, setCity] = useState('')
 
+   const tmpKey = import.meta.env.VITE_WEATHER_API_KEY || "NoKy";
+
 
    async function getWeather(e) {
       e.preventDefault()
 
       const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
-      console.log("K:", apiKey)
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
       setIsLoading(true)
@@ -39,7 +40,7 @@ const App = () => {
    return (
       <div className='container'>
          <h1>Weather App</h1>
-         <form action="" onSubmit={getWeather}>
+         <form data-ky={tmpKey} action="" onSubmit={getWeather}>
             <input
                type="text"
                id='city'
